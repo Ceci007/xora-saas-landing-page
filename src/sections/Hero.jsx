@@ -15,6 +15,9 @@ const Hero = () => {
               <Button icon="/images/zap.svg">Try it now</Button>
             </LinkScroll>
           </div>
+          <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
+            <img src="/images/hero.png" alt="Hero" className="size-1230 max-lg:h-auto" />
+          </div>
         </div>
       </Element>
     </section>
