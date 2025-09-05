@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
+import Button from '../components/Button'
 import clsx from 'clsx'
-import { plans } from '../constants';
+import CountUp from 'react-countup'
+import { plans } from '../constants'
 
 const Pricing = () => {
   const [monthly, setMonthly] = useState(false);
@@ -31,14 +33,37 @@ const Pricing = () => {
                 {index === 1 && (
                   <div className="absolute top-0 left-0 right-0 rounded-tl-3xl rounded-tr-3xl g4 h-330 z-1" />
                 )}
-                <div className={clsx("absolute left-0 right-0 z-2 flex items-center justify-center", index === 1 ? "-top-6" : "-top6 xl:-top-11")}>
+                <div className={clsx("absolute left-0 right-0 z-2 flex items-center justify-center", index === 1 ? "-top-6" : "-top-6 xl:-top-11")}>
                   <img src={plan.logo} alt={plan.title} className={clsx("object-contain drop-shadow-2xl", index === 1 ? "size-[120px]" : "size-[88px]")} />
                 </div>
                 <div className={clsx("relative flex flex-col items-center", index === 1 ? "pt-24" : "pt-12")}>
                   <div className={clsx("small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercase", index === 1 ? "border-p3 text-p3" : "border-p1 text-p1")}>
                     {plan.title}
                   </div>
+                  <div className="relative flex items-center justify-center z-2">
+                    <div className={clsx("h-num flex items-start", index === 1 ? "text-p3" : "text-p4")}>$ <CountUp start={plan.priceMonthly} end={monthly ? plan.priceMonthly : plan.priceYearly} duration={0.4} useEasing={false} preserveValue /></div>
+                    <div className="relative ml-1 uppercase small-1 top-3">
+                      / mo
+                    </div>
+                  </div>
                 </div>
+                <div className={clsx("body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4", index === 1 && "border-b")}>
+                  {plan.caption}
+                </div>
+                <ul className="mx-auto space-y-4 xl:px-7">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="relative flex items-center gap-5">
+                      <img src="/images/check.png" alt="check" className="object-contain size-10" />
+                      <p className="flex-1">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex justify-center w-full mt-10">
+                  <Button icon={plan.icon}>Get Started</Button>
+                </div>
+                {index === 1 && (
+                  <p className="text-center small-compact mt-9 text-p3 before:mx-2.5 before:content-['-'] after:mx-2.5 after:content-['-']">Limited time offer</p>
+                )}
               </div>
             ))}
           </div>
