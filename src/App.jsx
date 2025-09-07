@@ -3,7 +3,7 @@ import Header from './sections/Header';
 import Hero from './sections/Hero';
 import Features from './sections/Features';
 import Pricing from './sections/Pricing';
-import Faq from './sections/Faq';
+import FaqSection from './sections/FaqSection';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <Hero />
       <Features />
       <Pricing />
-      <Faq />
+      <FaqSection />
     </main>
   )
 }
