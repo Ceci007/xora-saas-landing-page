@@ -17,7 +17,7 @@ const Testimonials = () => {
             {testimonials.slice(0, halfLength).map((testimonial) => <TestimonialItem key={testimonial.id} item={testimonial} containerClassName="last:after:hidden last:after:max-md:block" />)}
           </div>
           <div className="flex-50">
-          {testimonials.slice(halfLength).map((testimonial) => <TestimonialItem key={testimonial.id} item={testimonial} containerClassName="last:after:hidden after:right-auto after:left-0 after:max-md:-left-4 md:px-12" />)}
+            {testimonials.slice(halfLength).map((testimonial) => <TestimonialItem key={testimonial.id} item={testimonial} containerClassName="last:after:hidden after:right-auto after:left-0 after:max-md:-left-4 md:px-12" />)}
           </div>
         </div>
       </div>
