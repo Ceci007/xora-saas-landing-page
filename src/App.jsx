@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import Features from './sections/Features';
 import Pricing from './sections/Pricing';
 import FaqSection from './sections/FaqSection';
+import Testimonials from './sections/Testimonials';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Features />
       <Pricing />
       <FaqSection />
+      <Testimonials />
     </main>
   )
 }
